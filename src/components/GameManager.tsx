@@ -1,7 +1,6 @@
 'use client'
 
 import { GamePayload, Item } from "@/lib/types";
-import { findItem } from "@/lib/utils";
 import { useCallback, useMemo, useState } from "react";
 import Fuse from 'fuse.js'
 
@@ -25,6 +24,8 @@ export default function GameManager({ game }: GameManagerProps) {
     }, [game.items])
 
     const onGuess = useCallback(() => {
+        if (!input) return
+
         const searchResult = fuseSearch.search(input)
         const foundItems = searchResult.map(result => result.item)
 
@@ -61,7 +62,7 @@ export default function GameManager({ game }: GameManagerProps) {
         
         setTurn(turn + 1)
         setInput('')
-    }, [turn, input, score, pastGuesses])
+    }, [turn, input, score, pastGuesses, fuseSearch])
 
     return (
         <div>

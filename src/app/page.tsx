@@ -1,4 +1,5 @@
 import { searchGames } from "@/actions/gameActions";
+import Link from 'next/link'
 
 export default async function Home() {
 
@@ -11,9 +12,9 @@ export default async function Home() {
         {
           games.map((g) => (
             <li key={g.id}>
-              <a href={`/game/${g.id}`}>
+              <Link href={`/game/${g.id}`}>
                 {g.title}
-              </a>
+              </Link>
             </li>
           ))
         }
