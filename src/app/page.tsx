@@ -6,20 +6,16 @@ export default async function Home() {
   const games = await searchGames({})
 
   return (
-    <div>
-      <h1> Games </h1>
-      <ol>
+    <div className="p-4 flex flex-col items-center gap-4">
         {
           games.map((g) => (
-            <li key={g.id}>
-              <Link href={`/game/${g.id}`}>
-                {g.title}
+              <Link href={`/game/${g.id}`} key={g.id}>
+                <div className="w-72 p-4 text-center border rounded-md">
+                  {g.title}
+                </div>
               </Link>
-            </li>
           ))
         }
-
-      </ol>
     </div>
   );
 }

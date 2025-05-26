@@ -208,14 +208,14 @@ export const TopSongs: Item[] = [
 
 export const TopMoviesGame: GamePayload = {
     id: 1,
-    title: 'Highest Grossing Movies',
+    title: 'Highest grossing movies',
     description: 'Highest grossing movies ever worldwide',
     items: TopMovies
 }
 
 export const TopSongsGame: GamePayload = {
     id: 2,
-    title: 'Most Streamed Songs',
+    title: 'Most streamed spotify songs',
     description: 'Most streamed songs on Spotify since the day the song released',
     items: TopSongs
 }
